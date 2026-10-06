@@ -1,4 +1,4 @@
-# Fraud Detection Pipeline — Databricks Medallion Architecture
+# Fraud Detection Pipeline - Databricks Medallion Architecture
 
 An end-to-end data engineering pipeline that ingests credit card transaction data, processes it
 through a Bronze → Silver → Gold medallion architecture, engineers features, and trains a fraud
@@ -51,7 +51,7 @@ are the only original, human-readable fields.
 
 ### Bronze — raw ingestion
 Loads the source CSV as-is into a Delta table, tagging each row with an ingestion timestamp and
-source file path. No transformations — this is the untouched, reprocessable copy.
+source file path. No transformations - this is the untouched, reprocessable copy.
 
 ### Silver — clean and conform
 Deduplicates, enforces types, runs null checks on key columns, and derives `transaction_hour`
@@ -59,7 +59,7 @@ from the raw `Time` field. Filters out any structurally invalid rows (e.g. negat
 
 ### Gold — business aggregations and features
 Two tables:
-- `gold_hourly_fraud_summary` — transaction count, fraud count, and fraud rate by hour, feeding
+- `gold_hourly_fraud_summary` - transaction count, fraud count, and fraud rate by hour, feeding
   the dashboard.
 - `gold_model_features` — adds `amount_zscore` (a rolling z-score over the last 50 transactions,
   standing in for "does this look like normal spending behaviour") and `is_night` (flag for
