@@ -6,7 +6,7 @@ classifier — all orchestrated as a scheduled Databricks Workflow with MLflow m
 
 ## Why this project
 
-Built to demonstrate the full data engineering lifecycle on Databricks: not just a notebook that
+This project was built to demonstrate the full data engineering lifecycle on Databricks: not just a notebook that
 runs once, but a pipeline with data quality checks, feature engineering, model tracking, and
 production-style orchestration. The fraud detection use case ties directly into AML/SAR concepts
 from banking compliance work.
