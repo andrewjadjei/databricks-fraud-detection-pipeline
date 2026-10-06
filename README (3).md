@@ -105,21 +105,3 @@ across the run (2 upstream tables, 4 downstream tables).
 │   └── mlflow_run.png                      # Registered model + metrics
 └── README.md
 ```
-
-## Running this yourself
-
-1. Upload `creditcard.csv` to a Unity Catalog volume, e.g.
-   `/Volumes/<catalog>/fraud_project/raw_data/creditcard.csv`.
-2. Import both `.py` files as notebooks into a Databricks workspace.
-3. Update `CATALOG`/`SCHEMA` and `RAW_PATH` at the top of notebook 1 to match your environment.
-4. Run notebook 1, then notebook 2, on Serverless (or any) compute.
-5. Optionally, wire both into a Databricks Job with a sequential dependency to reproduce the
-   scheduled Workflow.
-
-## Possible extensions
-
-- Swap the Random Forest baseline for an isolation forest to explore unsupervised anomaly
-  detection (no labels required).
-- Add a Databricks SQL alert on the hourly fraud-rate table for real-time-style monitoring.
-- Extend feature engineering with merchant-category-style groupings if a richer dataset (e.g.
-  IEEE-CIS) is used instead.
