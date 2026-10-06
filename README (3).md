@@ -2,7 +2,7 @@
 
 An end-to-end data engineering pipeline that ingests credit card transaction data, processes it
 through a Bronze → Silver → Gold medallion architecture, engineers features, and trains a fraud
-classifier — all orchestrated as a scheduled Databricks Workflow with MLflow model tracking.
+classifier, all orchestrated as a scheduled Databricks Workflow with MLflow model tracking.
 
 ## Why this project
 
@@ -33,31 +33,31 @@ flowchart TD
 
 ## Tech stack
 
-- **Databricks** (Free Edition) — compute, Unity Catalog, Workflows
-- **PySpark** — ingestion and transformation
-- **Delta Lake** — table format across all three layers
-- **MLflow** — experiment tracking, model registry
-- **scikit-learn** — baseline classifier (Random Forest)
-- **Databricks SQL** — dashboarding
+- **Databricks** (Free Edition) - compute, Unity Catalog, Workflows
+- **PySpark** - ingestion and transformation
+- **Delta Lake** - table format across all three layers
+- **MLflow** - experiment tracking, model registry
+- **scikit-learn** - baseline classifier (Random Forest)
+- **Databricks SQL** - dashboarding
 
 ## Data
 
 [Credit Card Fraud Detection dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
-(ULB / Kaggle) — 284,807 European card transactions over two days in September 2013, with 492
-labelled as fraud (~0.17% fraud rate). Features `V1`–`V28` are PCA-anonymized; `Time` and `Amount`
+(ULB / Kaggle) - 284,807 European card transactions over two days in September 2013, with 492
+labelled as fraud (~0.17% fraud rate). Features `V1`-`V28` are PCA-anonymized; `Time` and `Amount`
 are the only original, human-readable fields.
 
 ## Pipeline stages
 
-### Bronze — raw ingestion
+### Bronze - raw ingestion
 Loads the source CSV as-is into a Delta table, tagging each row with an ingestion timestamp and
 source file path. No transformations - this is the untouched, reprocessable copy.
 
-### Silver — clean and conform
+### Silver - clean and conform
 Deduplicates, enforces types, runs null checks on key columns, and derives `transaction_hour`
 from the raw `Time` field. Filters out any structurally invalid rows (e.g. negative amounts).
 
-### Gold — business aggregations and features
+### Gold - business aggregations and features
 Two tables:
 - `gold_hourly_fraud_summary` - transaction count, fraud count, and fraud rate by hour, feeding
   the dashboard.
