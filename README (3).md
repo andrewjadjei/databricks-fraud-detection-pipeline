@@ -94,7 +94,7 @@ Both notebooks run as a two-task Databricks Workflow (`fraud_detection_pipeline`
 Scheduled to run daily on Serverless compute. Databricks automatically tracks table lineage
 across the run (2 upstream tables, 4 downstream tables).
 
-<img width="1470" height="812" alt="workflow screenshot" src="https://github.com/user-attachments/assets/d8923b91-746a-41ac-8b37-bd4b7292d9a9" />
+![Databricks Workflow DAG](screenshots/workflow_dag.png)
 
 
 ## Repository structure
