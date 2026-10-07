@@ -86,6 +86,7 @@ model in Unity Catalog (`main.fraud_project.fraud_baseline_rf`).
 With a ~0.17% fraud rate, accuracy alone is meaningless (predicting "not fraud" every time would
 still score >99.8%) — precision, recall, and average precision are the metrics that actually
 matter here, and are what's reported above.
+
 ![MLflow run and registered model](screenshots/mlflow_run.png)
 
 ## Orchestration
