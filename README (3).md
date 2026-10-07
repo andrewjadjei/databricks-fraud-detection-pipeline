@@ -29,8 +29,6 @@ flowchart TD
     end
 ```
 
-*(See `/screenshots/workflow_dag.png` for the actual running job graph from Databricks Jobs & Pipelines.)*
-
 ## Tech stack
 
 - **Databricks** (Free Edition) - compute, Unity Catalog, Workflows
@@ -61,7 +59,7 @@ from the raw `Time` field. Filters out any structurally invalid rows (e.g. negat
 Two tables:
 - `gold_hourly_fraud_summary` - transaction count, fraud count, and fraud rate by hour, feeding
   the dashboard.
-- `gold_model_features` — adds `amount_zscore` (a rolling z-score over the last 50 transactions,
+- `gold_model_features` - adds `amount_zscore` (a rolling z-score over the last 50 transactions,
   standing in for "does this look like normal spending behaviour") and `is_night` (flag for
   transactions between midnight and 5am).
 
@@ -84,7 +82,7 @@ model in Unity Catalog (`main.fraud_project.fraud_baseline_rf`).
 | Fraud precision | 0.87 |
 
 With a ~0.17% fraud rate, accuracy alone is meaningless (predicting "not fraud" every time would
-still score >99.8%) — precision, recall, and average precision are the metrics that actually
+still score >99.8%) - precision, recall, and average precision are the metrics that actually
 matter here, and are what's reported above.
 
 ![MLflow run and registered model](screenshots/mlflow_run.png)
@@ -106,7 +104,6 @@ across the run (2 upstream tables, 4 downstream tables).
 ├── 02_feature_engineering_model_training.py # Feature engineering + MLflow training
 ├── screenshots/
 │   ├── workflow_dag.png                    # Task graph from Databricks Jobs & Pipelines
-│   ├── gold_hourly_summary.png             # Hourly fraud rate table
 │   └── mlflow_run.png                      # Registered model + metrics
 └── README.md
 ```
