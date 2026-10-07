@@ -63,7 +63,7 @@ Two tables:
   standing in for "does this look like normal spending behaviour") and `is_night` (flag for
   transactions between midnight and 5am).
 
-**Finding worth noting:** the hourly rollup shows fraud rate isn't flat across the day — it spikes
+**Finding worth noting:** the hourly rollup shows fraud rate isn't flat across the day; it spikes
 to ~1.5% around 2am, roughly 9x the overall baseline of 0.17%. That pattern surfaced from the
 aggregation alone, before any modelling.
 
