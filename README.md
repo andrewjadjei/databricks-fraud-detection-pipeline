@@ -106,6 +106,7 @@ across the run (2 upstream tables, 4 downstream tables).
 ├── 02_feature_engineering_model_training.py # Feature engineering + MLflow training
 ├── screenshots/
 │   ├── workflow_dag.png                    # Task graph from Databricks Jobs & Pipelines
+│   ├── dashboard.png                       # Databricks SQL dashboard on the Gold tables
 │   └── mlflow_run.png                      # Registered model + metrics
 └── README.md
 ```
