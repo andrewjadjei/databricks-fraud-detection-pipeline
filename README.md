@@ -111,3 +111,13 @@ across the run (2 upstream tables, 4 downstream tables).
 └── README.md
 ```
 
+
+## How to run this yourself
+
+1. Download `creditcard.csv` from Kaggle and upload it to a Unity Catalog volume, e.g.
+   `/Volumes/<catalog>/fraud_project/raw_data/creditcard.csv`.
+2. Import both `.py` files into a Databricks workspace as notebooks.
+3. Update `CATALOG`, `SCHEMA` and `RAW_PATH` at the top of notebook 1 to match your environment.
+4. Run notebook 1, then notebook 2, on Serverless compute.
+5. You can chain both into a Databricks Job with a sequential dependency to reproduce the
+   scheduled Workflow.
