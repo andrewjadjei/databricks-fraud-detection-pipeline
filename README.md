@@ -45,6 +45,9 @@ flowchart TD
 labelled as fraud (~0.17% fraud rate). Features `V1`-`V28` are PCA-anonymized; `Time` and `Amount`
 are the only original, human-readable fields.
 
+The raw file contains exact duplicate rows; after removing them, the Silver layer holds
+283,726 transactions, 473 of them fraud (~0.17%).
+
 ## Pipeline stages
 
 ### Bronze - raw ingestion
