@@ -67,6 +67,8 @@ Two tables:
 to ~1.5% around 2am, roughly 9x the overall baseline of 0.17%. That pattern surfaced from the
 aggregation alone, before any modelling.
 
+![Fraud detection dashboard](screenshots/dashboard.png)
+
 ### Model training
 A Random Forest baseline (`class_weight="balanced"` to handle the severe imbalance), trained on
 the Gold feature table and logged to MLflow with parameters, metrics, and a versioned, registered
